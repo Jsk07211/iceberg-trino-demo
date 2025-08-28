@@ -1,14 +1,12 @@
-CREATE SCHEMA IF NOT EXISTS iceberg.demo
-WITH (location = 's3://warehouse/demo/');
+CREATE SCHEMA IF NOT EXISTS iceberg.demo;
 
--- 2) Small table + seed data
 DROP TABLE IF EXISTS iceberg.demo.items;
 
 CREATE TABLE iceberg.demo.items (
-  id   BIGINT,
+  id   INT,
   name VARCHAR
 );
 
 INSERT INTO iceberg.demo.items VALUES
-  (1, 'alpha'),
-  (2, 'beta');
+  (1, 'marko'),
+  (2, 'peter');
